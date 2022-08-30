@@ -1,0 +1,169 @@
+/* Declare variables ----------------- */
+
+:root {
+  --dark: hsl(20, 7%, 65%);
+  --darker: hsl(20, 7%, 35%);
+  --light: hsl(20, 7%, 85%);
+  --bggrey: #eee;
+  --highlight: #fff;
+  --accent: #0075b0;
+
+  --stripeGrad: linear-gradient(-90deg, black 0%, var(--darker) 40%, var(--darker) 60%, var(--dark) 90%, black 100%);
+  --StripeSize: 10px 20px;
+
+  --fCastColLtCol: rgba(61, 165, 255, 0.5) ;
+  --fCastColDkCol: rgba(0, 0, 150, 0.5) ;
+
+  --fCastColLt: white;
+  --fCastColDk: white ;
+  
+  --fCastBg:linear-gradient(180deg, var(--fCastColLt) 40%, var(--fCastColDk) 90%);
+
+  --stRadius: 0 6px 0 6px;
+
+  /* Unit suffixes */
+  --deg: '°';
+  --degT: '°C';
+  --speed: 'm/s';
+  --pressure: 'hPa';
+  --length: 'm';
+}
+
+
+/* Common ----------------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  font-family: Calibri, 'Trebuchet MS', sans-serif;
+  text-align: center;
+  line-height: 1.3;
+  /* font-size: 14px; */
+}
+
+/* Tags ----------------- */
+html,
+body,
+.wrapper {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-image: linear-gradient(var(--light) 70%, var(--darker) 100%);
+  position: relative;
+}
+
+body {
+  background-color: #f9fbfd;
+}
+
+/* -------------------------------------- */
+
+
+
+/* -------Buttons------------------------------- */
+
+.btn {
+  width: 95%;
+  border-radius: var(--stRadius);
+  color: var(--highlight);
+  box-shadow: inset -2px -2px 4px var(--darker);
+  margin: 3px;
+  border: none;
+}
+
+.btn:hover {
+  color: black;
+  filter: brightness(120%);
+}
+
+.btn:active {
+  color: white;
+  filter: brightness(80%);
+}
+
+.btnClose {
+  color: var(--darkest);
+  float: right;
+  padding: 0 5px 0 2px;
+}
+.btnClose::before {
+  content: '𝘅';
+  /* font-size: .8rem;  */
+  color: var(--darker);
+  font-weight:900;
+ 
+
+}
+
+/* Modal  ----------------- */
+/* The Modal (background) */
+.windowModal {
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Sit on top */
+  padding-top: 100px;
+  /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%;
+  /* Full width */
+  height: 100%;
+  /* Full height */
+  overflow: auto;
+  /* Enable scroll if needed */
+  background-color: var(--darker);
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4);
+  /* Black w/ opacity */
+}
+
+/* Modal Text Content */
+.modal-content {
+  background-color: var(--highlight);
+  margin: auto;
+  padding: 20px;
+  border: 1px solid var(--darker);
+  width: 60%;
+}
+
+/* Modal Close Button */
+.closeSpan {
+  color: var(--dark);
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.closeSpan:hover,
+.closeSpan:focus {
+  color: var(--darker);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+
+/* Media Sizes ----------------- */
+
+@media (max-width: 690px) {
+  .btn {
+    font-size: 1rem;
+  }
+
+}
+
+@media (max-width: 450px) {
+
+  #main-page {
+    flex-direction: column;
+    width: 95%;
+  }
+
+  #search-panel {
+    width: 95%;
+  }
+
+}
