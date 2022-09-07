@@ -50,11 +50,11 @@ User.init(
     mobile: {
       type: DataTypes.STRING,
       allowNull: false,
-      validate: {
-        validator: function (v) {
-          return phoneValidationRegex.test(v);
-        },
-      },
+      // validate: {
+      //   validator: function (v) {
+      //     return phoneValidationRegex.test(v);
+      //   },
+      // },
     },
 
   },
