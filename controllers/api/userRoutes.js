@@ -1,11 +1,11 @@
 const router = require('express').Router();
-const { User } = require('../../models');
+const { User , Posts} = require('../../models');
 
 // Retrieve all the users
 router.get('/', async (req, res) => {
   try {
     const users = await User.findAll({
-     // include: [{ model: Xxx }],
+    include: [{ model: Posts }],
     });
     res.status(200).json({
       data: users
@@ -21,7 +21,10 @@ router.get('/', async (req, res) => {
 // Retrieve one user
 router.get('/:id', async (req, res) => {
   try {
-    const user = await User.findByPk(req.params.id);
+    const user = await User.findByPk(req.params.id,{
+      include: [{ model: Posts }],
+
+    });
 
     res.status(200).json({
       data: user
@@ -95,11 +98,10 @@ router.post('/login', async (req, res) => {
       return;
     }
 
-    // // Password is correct. Save the data
+    //  Password is correct. Save the data
     req.session.save(() => {
       req.session.userId = userData.id;
       req.session.loggedIn = true;
-      //req.session.role_type = userData.role_type;
 
       res.status(200).json({
         data: userData,

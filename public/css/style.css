@@ -20,14 +20,8 @@
   --fCastBg:linear-gradient(180deg, var(--fCastColLt) 40%, var(--fCastColDk) 90%);
 
   --stRadius: 0 6px 0 6px;
-
-  /* Unit suffixes */
-  --deg: '°';
-  --degT: '°C';
-  --speed: 'm/s';
-  --pressure: 'hPa';
-  --length: 'm';
 }
+
 
 
 /* Common ----------------- */
@@ -54,6 +48,10 @@ body,
 
 body {
   background-color: #f9fbfd;
+}
+
+header {
+  background-color: green;
 }
 
 /* -------------------------------------- */

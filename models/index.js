@@ -1,15 +1,15 @@
 const User = require('./User');
+const Posts = require('./Posts');
 
 
 // Belongs to and has many linkage initialisations
 
-// User.belongsTo(Stallholder, {
-//   foreignKey: 'stallholder_id',
-// });
-// Stallholder.hasMany(User, {
-//   foreignKey: 'stallholder_id',
-// });
+Posts.belongsTo(User, {
+    foreignKey: 'user_id',
+});
+User.hasMany(Posts, {
+    foreignKey: 'user_id',
+});
 
 
-module.exports = { User };
-
+module.exports = { User, Posts };

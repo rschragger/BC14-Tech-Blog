@@ -7,13 +7,10 @@ const randomId = (obj) => {
   return obj[Math.floor(Math.random() * obj.length)].id
 }
 
-const seedDatabase = async () => {
-  await sequelize.sync({ force: true });
+const seedDatabase = async () => { 
+  await sequelize.sync({ force: false });
 
-
-  for (const user of userSeedData) {
-  
-    
+  for (const user of userSeedData) { 
     const newUser = await User.create(
       {
         ...user,
