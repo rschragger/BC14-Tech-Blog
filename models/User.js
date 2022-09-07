@@ -3,8 +3,6 @@ const sequelize = require('../config/connection');
 const bcrypt = require('bcrypt');
 
 
-//Phone validation from https://stackoverflow.com/questions/67250004/check-if-the-value-is-phone-number-in-model-sequelize/67250175#67250175
-const phoneValidationRegex = /\d{3}-\d{3}-\d{4}/;
 
 
 class User extends Model {
@@ -22,14 +20,6 @@ User.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    // stallholder_id: {
-    //   type: DataTypes.INTEGER,
-    //   allowNull: true,
-    //   references: {
-    //     model: 'stallholder',
-    //     key: 'id',
-    //   },
-    //},
     username: {
       type: DataTypes.STRING,
       allowNull: false,
