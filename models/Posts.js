@@ -21,7 +21,12 @@ Posts.init(
         key: 'id',
       },
     },
-    post_text: {
+    title: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      len: [0, 256], //would be larger in real life, but I don't want someone using up my free data
+    },
+    text: {
       type: DataTypes.STRING,
       allowNull: false,
       len: [0, 1024], //would be larger in real life, but I don't want someone using up my free data

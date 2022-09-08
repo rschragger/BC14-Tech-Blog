@@ -1,11 +1,11 @@
 const router = require('express').Router();
-const { Posts , User} = require('../../models');
+const { Posts , User, Comments} = require('../../models');
 
 // Retrieve all the Posts
 router.get('/', async (req, res) => {
   try {
     const posts = await Posts.findAll({
-     // include: [{ model: Xxx }],
+     include: [{ model: Comments },{model: User}],
     });
     res.status(200).json({
       data: posts
@@ -21,7 +21,9 @@ router.get('/', async (req, res) => {
 // Retrieve one Post
 router.get('/:id', async (req, res) => {
   try {
-    const posts = await Posts.findByPk(req.params.id);
+    const posts = await Posts.findByPk(req.params.id,{
+      include: [{ model: Comments },{model: User}],
+    });
 
     res.status(200).json({
       data: posts

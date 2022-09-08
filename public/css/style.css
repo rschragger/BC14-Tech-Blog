@@ -11,13 +11,13 @@
   --stripeGrad: linear-gradient(-90deg, black 0%, var(--darker) 40%, var(--darker) 60%, var(--dark) 90%, black 100%);
   --StripeSize: 10px 20px;
 
-  --fCastColLtCol: rgba(61, 165, 255, 0.5) ;
-  --fCastColDkCol: rgba(0, 0, 150, 0.5) ;
+  --fCastColLtCol: rgba(61, 165, 255, 0.5);
+  --fCastColDkCol: rgba(0, 0, 150, 0.5);
 
   --fCastColLt: white;
-  --fCastColDk: white ;
-  
-  --fCastBg:linear-gradient(180deg, var(--fCastColLt) 40%, var(--fCastColDk) 90%);
+  --fCastColDk: white;
+
+  --fCastBg: linear-gradient(180deg, var(--fCastColLt) 40%, var(--fCastColDk) 90%);
 
   --stRadius: 0 6px 0 6px;
 }
@@ -42,20 +42,75 @@ body,
   height: 100%;
   margin: 0;
   padding: 0;
-  background-image: linear-gradient(var(--light) 70%, var(--darker) 100%);
+  /* background-image: linear-gradient(var(--light) 70%, var(--darker) 100%); */
   position: relative;
 }
 
 body {
-  background-color: #f9fbfd;
+  background-color: var(--light);
 }
 
 header {
-  background-color: green;
+  background-color: var(--accent);
 }
+
+main,
+.sidebar,
+.main-section {
+  display: flex;
+  flex-wrap: wrap;
+  width:95%;
+  margin: auto;
+}
+
+.sidebar {
+  width: 30%;
+  /* min-width: 300px; */
+}
+
+.main-section {
+  width:65%;
+}
+
 
 /* -------------------------------------- */
 
+.posts-title,
+.posts-text,
+.posts,
+.comments,
+.comments-text {
+  background-color: var(--highlight);
+  border: 1pt solid var(--darker);
+  border-radius: 3pt;
+  width: 95%;
+  margin: 3pt auto;
+  padding: 2pt;
+  text-align: left;
+}
+.posts{
+  width:100%;
+  border: none;
+}
+.posts-title {
+  background-color: var(--accent);
+  color: var(--highlight);
+  font-weight: 700;
+}
+
+.comments {
+  margin-left: 5%;
+  width: 95%;
+  border: none;
+}
+
+.user-name {
+  font-size: .8rem;
+  font-style: italic;
+  text-align: right;
+  padding-right: 5pt;
+  border-top: 1pt solid var(--light) ;
+}
 
 
 /* -------Buttons------------------------------- */
@@ -84,12 +139,13 @@ header {
   float: right;
   padding: 0 5px 0 2px;
 }
+
 .btnClose::before {
   content: '𝘅';
   /* font-size: .8rem;  */
   color: var(--darker);
-  font-weight:900;
- 
+  font-weight: 900;
+
 
 }
 
@@ -150,7 +206,11 @@ header {
   .btn {
     font-size: 1rem;
   }
-
+  .sidebar,
+  .main-section {
+    width:95%;
+    margin:auto;
+  }
 }
 
 @media (max-width: 450px) {

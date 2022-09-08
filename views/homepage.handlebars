@@ -4,14 +4,26 @@
 <nav>
     <p>Navigation</p>
 </nav>
-<div>
-    sidebar
-</div>
 <main>
-    main
-    {{#each users as |user|}}
-<p>{{user.first_name}}</p> 
-    {{/each}}
+    <div class="sidebar">
+        sidebar
+    </div>
+    <div class="main-section">
+        {{#each posts as |post|}}
+        <div class="posts">
+            <div class="posts-title">{{post.title}}
+                <div class="user-name">{{post.user.username}}</div>
+            </div>
+
+            <div class="posts-text">{{post.text}}
+                <div class="comments">
+                {{#each post.comments as |comment|}}
+                <div class="comments-text">{{comment.comment}}</div>
+                {{/each}}
+            </div>
+        </div>
+        {{/each}}
+    </div>
 </main>
 <footer>
 
