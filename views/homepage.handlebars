@@ -11,19 +11,20 @@
     <div class="main-section">
         {{#each posts as |post|}}
         <div class="posts">
-            <div class="posts-title">{{post.title}}
-                <div class="user-name">{{post.user.username}}</div>
+            <div class="posts-title">{{incremented @index}}. {{post.title}}
+                <div class="user-name">{{post.user.username}} at {{formatDate post.createdAt "dayLong"}}</div>
             </div>
 
-            <div class="posts-text">{{post.text}}
+            <div class="posts-text">{{post.text}}{{post.id}}
                 <div class="comments">
-                {{#each post.comments as |comment|}}
-                <div class="comments-text">{{comment.comment}}</div>
-                {{/each}}
+                    {{#each post.comments as |comment|}}
+                    <div class="comments-text">{{comment.comment}}</div>
+                    <div class="user-name">{{comment.user.username}} at {{formatDate comment.createdAt "dayLong"}}</div>
+                    {{/each}}
+                </div>
             </div>
+            {{/each}}
         </div>
-        {{/each}}
-    </div>
 </main>
 <footer>
 

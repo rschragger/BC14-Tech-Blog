@@ -52,6 +52,9 @@ body {
 
 header {
   background-color: var(--accent);
+  color: var(--highlight);
+  font-size: 2rem;
+  font-weight: 800;
 }
 
 main,
@@ -81,7 +84,7 @@ main,
 .comments,
 .comments-text {
   background-color: var(--highlight);
-  border: 1pt solid var(--darker);
+  /* border: 1pt solid var(--darker); */
   border-radius: 3pt;
   width: 95%;
   margin: 3pt auto;
@@ -102,6 +105,7 @@ main,
   margin-left: 5%;
   width: 95%;
   border: none;
+
 }
 
 .user-name {

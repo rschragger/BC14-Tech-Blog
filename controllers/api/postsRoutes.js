@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Posts , User, Comments} = require('../../models');
+const { Posts , User, Comments, CommentsUser} = require('../../models');
 
 // Retrieve all the Posts
 router.get('/', async (req, res) => {
@@ -22,7 +22,7 @@ router.get('/', async (req, res) => {
 router.get('/:id', async (req, res) => {
   try {
     const posts = await Posts.findByPk(req.params.id,{
-      include: [{ model: Comments },{model: User}],
+      include: [{ model: Comments, include:[{model: CommentsUser}] },{model: User}],
     });
 
     res.status(200).json({

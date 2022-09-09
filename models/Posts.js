@@ -32,20 +32,20 @@ Posts.init(
       len: [0, 1024], //would be larger in real life, but I don't want someone using up my free data
     },
   },
-{
-  // {
-  //   hooks: {
-  //     beforeCreate: async (newUserData) => {
-  //       newUserData.password = await bcrypt.hash(newUserData.password, 10);
-  //       return newUserData;
-  //     },
-  //     beforeUpdate: async (updatedUserData) => {
-  //       if (updatedUserData.password) {
-  //         updatedUserData.password = await bcrypt.hash(updatedUserData.password, 10);
-  //       }
-  //       return updatedUserData;
-  //     },
-  //   },
+  {
+    // {
+    //   hooks: {
+    //     beforeCreate: async (newUserData) => {
+    //       newUserData.password = await bcrypt.hash(newUserData.password, 10);
+    //       return newUserData;
+    //     },
+    //     beforeUpdate: async (updatedUserData) => {
+    //       if (updatedUserData.password) {
+    //         updatedUserData.password = await bcrypt.hash(updatedUserData.password, 10);
+    //       }
+    //       return updatedUserData;
+    //     },
+    //   },
     sequelize,
     timestamps: true,
     freezeTableName: true,

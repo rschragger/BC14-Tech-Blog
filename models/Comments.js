@@ -13,28 +13,36 @@ Comments.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    posts_id: {
+    user_id: {
       type: DataTypes.INTEGER,
-      allowNull: false,// might be a comment on another comment, but still part of a post
-      references: {
-        model: 'posts',
-        key: 'id',
-      },
-    },
-    comments_id: {
-      type: DataTypes.INTEGER,
-      allowNull: true,//might be a comment on a post
-      references: {
-        model: 'comments',
-        key: 'id',
-      },
-    },
-    comment: {
-      type: DataTypes.STRING,
       allowNull: false,
-      len: [0, 1024], //would be larger in real life, but I don't want someone using up my free data
+      references: {
+        model: 'user',
+        key: 'id',
+      },
     },
-  },
+      posts_id: {
+        type: DataTypes.INTEGER,
+        allowNull: false,// might be a comment on another comment, but still part of a post
+        references: {
+          model: 'posts',
+          key: 'id',
+        },
+      },
+      comments_id: {
+        type: DataTypes.INTEGER,
+        allowNull: true,//might be a comment on a post
+        references: {
+          model: 'comments',
+          key: 'id',
+        },
+      },
+      comment: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        len: [0, 1024], //would be larger in real life, but I don't want someone using up my free data
+      },
+    },
 {
 
     sequelize,

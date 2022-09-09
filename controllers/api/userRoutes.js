@@ -1,11 +1,11 @@
 const router = require('express').Router();
-const { User , Posts} = require('../../models');
+const { User, Posts, Comments } = require('../../models');
 
 // Retrieve all the users
 router.get('/', async (req, res) => {
   try {
     const users = await User.findAll({
-    include: [{ model: Posts }],
+      include: [{ model: Posts, include: [{ model: Comments }] }],
     });
     res.status(200).json({
       data: users
@@ -21,7 +21,7 @@ router.get('/', async (req, res) => {
 // Retrieve one user
 router.get('/:id', async (req, res) => {
   try {
-    const user = await User.findByPk(req.params.id,{
+    const user = await User.findByPk(req.params.id, {
       include: [{ model: Posts }],
 
     });
@@ -165,7 +165,7 @@ router.put('/:id', async (req, res) => {
 // Delete the user data
 router.delete('/:id', async (req, res) => {
   try {
-    const deletedUser = await User.destroy( {
+    const deletedUser = await User.destroy({
       where: {
         id: req.params.id
       },
