@@ -16,10 +16,16 @@ router.get('/:id',withAuth, async (req, res) => {
   })
     .catch(err => console.log(err));
   const posts = postsData.map((obj) => obj.get({ plain: true }));
+
+  const userPosts = posts.map((obj)=>{
+    if(obj.user_id===loggedInUser.id){ return obj.id }
+  })
+
   res.render('homepage',
     {
       loggedInUser,
       posts,
+      userPosts,
       postsView: true
     })
 

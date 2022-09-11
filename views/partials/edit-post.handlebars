@@ -1,7 +1,7 @@
 {{!-- <div class="card-body"> --}}
 	<div class="post-card">
 		<h5 class="card">Edit Post {{posts.[0].id}} - {{loggedInUser.first_name}} {{loggedInUser.last_name}} </h5>
-		<form id="edit-post-form" data-id-user="{{loggedInUser.id}}" data-id-post="{{posts.[0].id}}">
+		<form id="edit-post-form" data-id-user="{{loggedInUser.id}}" data-id-post="{{posts.[0].id}}" data-id-postuser=""{{posts.[0].user_id}}>
 			<hr />
 			<br>	
 			<div>
@@ -18,7 +18,8 @@
 			<br>
 			<hr />
 			<button type="submit" class="btn btn-form btn-center">Post</button>
-		</form>
-	</div>
+		</form></div>
+		<button id="delete-button" class="btn delete-btn" data-id-user="{{loggedInUser.id}}" data-id-post="{{posts.[0].id}}">Delete</button>
+	
 
 	<script src="/js/editpost.js"></script>

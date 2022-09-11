@@ -108,7 +108,7 @@ nav {
   margin: var(--margin) auto;
   /* align-items: flex-start;
   justify-content: flex-start; */
-  height: auto;
+  height: fit-content;
   /* min-width: 55%; */
   /* max-width: 100%; */
 
@@ -219,6 +219,7 @@ nav {
   margin: var(--margin);
   padding: var(--padding);
   width: 100%;
+  height: fit-content;
 }
 
 .posts {
@@ -262,12 +263,35 @@ nav {
 
 .btn {
   width: 95%;
-  border-radius: var(--stRadius);
+  border-radius: 0 0 var(--padding) var(--padding);
   background-color: var(--accent);
   color: var(--highlight);
   box-shadow: inset -2px -2px 4px var(--darker);
   margin: var(--margin);
+  padding:var(--padding);
   border: none;
+}
+.btn-form{
+  max-width: 50%;
+
+}
+.edit-btn{
+
+  margin: 0 var(--margin) var(--margin) auto ;
+  width:fit-content;
+  padding:var(--padding);
+  font-size: .8rem;
+  height: fit-content;
+}
+
+.delete-btn{
+  text-align: right;
+  margin: 0 var(--margin) var(--margin) auto ;
+  width:fit-content;
+  padding:var(--padding) 10px;
+  font-size: .8rem;
+  height: fit-content;
+  background-color: red;
 }
 
 .btn:hover {

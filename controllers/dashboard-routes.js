@@ -24,7 +24,7 @@ router.get('/',withAuth, async (req, res) => {
   const posts = postsData.map((obj) => obj.get({ plain: true }));
 
   const userPosts = posts.map((obj)=>{
-    if(obj.user_id===loggedInUser.id){obj.set(userpost=obj.id)}
+    if(obj.user_id===loggedInUser.id){ return obj.id }
   })
   
   res.render('homepage',
