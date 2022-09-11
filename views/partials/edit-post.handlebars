@@ -1,0 +1,24 @@
+{{!-- <div class="card-body"> --}}
+	<div class="post-card">
+		<h5 class="card">Edit Post {{posts.[0].id}} - {{loggedInUser.first_name}} {{loggedInUser.last_name}} </h5>
+		<form id="edit-post-form" data-id-user="{{loggedInUser.id}}" data-id-post="{{posts.[0].id}}">
+			<hr />
+			<br>	
+			<div>
+				<h3 id="error-message" class="text-red"></h3>
+			</div>
+			<div class="row">
+				<label for="post-title" class="form-label">Title</label>
+				<input type="text" class="form-control" id="post-title" value="{{posts.[0].title}}">
+			</div>
+			<div class="row">
+				<label for="post-text" class="form-label">Text</label>
+				<textarea cols="10" rows="15" class="form-control" id="post-text">{{posts.[0].text}}</textarea>
+			</div>
+			<br>
+			<hr />
+			<button type="submit" class="btn btn-form btn-center">Post</button>
+		</form>
+	</div>
+
+	<script src="/js/editpost.js"></script>

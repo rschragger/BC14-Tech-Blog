@@ -37,6 +37,7 @@ const getPostsData = async () => {
 		include: [{ model: User }, { model: Comments, include: [{ model: CommentsUser }] }],
 		attributes: { exclude: ["password"] },
 		// where: { id: { searchOp : searchTerm } },
+		order:[['createdAt','DESC'],],
 	})
 		.catch(err => console.log(err));
 	const posts = postsData.map((obj) => obj.get({ plain: true }));

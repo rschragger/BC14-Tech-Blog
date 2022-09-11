@@ -16,16 +16,23 @@ router.get('/',withAuth, async (req, res) => {
   const postsData = await Posts.findAll({
     include: [{ model: User }, { model: Comments, include: [{ model: CommentsUser }] }],
     where:{
-      id: req.session.userId
-    }
+      user_id: req.session.userId
+    },
+    order:[['createdAt','DESC']]
   })
     .catch(err => console.log(err));
   const posts = postsData.map((obj) => obj.get({ plain: true }));
+
+  const userPosts = posts.map((obj)=>{
+    if(obj.user_id===loggedInUser.id){obj.set(userpost=obj.id)}
+  })
+  
   res.render('homepage',
     {
       loggedInUser,
       posts,
-      postsView: true
+      userPosts,
+      postsView: true , //This still uses the home view
     })
 
 });

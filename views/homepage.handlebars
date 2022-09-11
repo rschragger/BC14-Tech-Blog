@@ -26,7 +26,11 @@
         {{/if}}
 
         {{#if newPostsView }}
-        {{> newpost posts=posts  loggedInUser=loggedInUser}}
+        {{> new-post posts=posts  loggedInUser=loggedInUser}}
+        {{/if}}
+
+         {{#if editPostsView }}
+        {{> edit-post posts=posts  loggedInUser=loggedInUser}}
         {{/if}}
     </div>
 </main>

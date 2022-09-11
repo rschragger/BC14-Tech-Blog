@@ -6,7 +6,7 @@
             <div class="posts-title">{{incremented @index}}. {{post.title}}
                 <div class="user-name">{{post.user.username}} at {{formatDate post.createdAt "dayLong"}}</div>
             </div>
-
+{{#if ../loggedInUser.id-post.user_id}} <h1>MINE</h1>{{/if}}
             <div class="posts-text">{{post.text}}
                 {{#if post.comments}}<div class="small-text">...{{post.comments.length}} comments</div>{{/if}}
                 <div id="comments-{{post.id}}" class="comments-hidden">
