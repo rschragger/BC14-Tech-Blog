@@ -17,9 +17,11 @@ router.get('/', async (req, res) => {
 */
 
   const loggedInUser = await modularUtils.getLoggedInUser(req.session.loggedIn, req.session.userId);
+
   const posts = await modularUtils.getPostsData()
 
   const userPosts = posts.map((obj)=>{
+    if(!loggedInUser){return}
     if(obj.user_id===loggedInUser.id){ return obj.id }
   })
 

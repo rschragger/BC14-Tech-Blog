@@ -1,29 +1,38 @@
-{{!-- <div class="main-section"> --}}
-    {{!-- <h1>POSTS TEST HERE</h1> --}}
-    {{#each posts as |post|}}
-    <div id="post-{{post.id}}" class="post-card">
-        {{!-- <a href="/post/{{post.id}}"> --}}
-            <div class="posts-title">{{incremented @index}}. {{post.title}}
-                <div class="user-name">{{post.user.username}} at {{formatDate post.createdAt "dayLong"}}</div>
-            </div>
-            <div class="posts-text">{{post.text}}
-                {{#if post.comments}}<div class="small-text">...{{post.comments.length}} comments</div>{{/if}}
-                <div id="comments-{{post.id}}" class="comments-hidden">
-                    <div class="comments">
-                        {{#each post.comments as |comment|}}
-                        <div class="comments-text">{{comment.comment}}</div>
-                        <div class="user-name">{{comment.user.username}} at {{formatDate comment.createdAt "dayLong"}}
-                        </div>
-                        {{/each}}
-                    </div>
-                </div>
-            </div>
+{{#each posts as |post|}}
+<div id="post-{{post.id}}" class="post-card">
+    {{!-- POSTS --}}
+    <div class="posts-title">{{incremented @index}}. {{post.title}}
+        <div class="user-name">{{post.user.username}} at {{formatDate post.createdAt "dayLong"}}</div>
     </div>
-    {{#ifIn post.id ../userPosts}} <div class="btn edit-btn"><a href="/editpost/{{post.id}}" >
+
+    <div class="posts-text">{{post.text}}<span id="post-reply-{{post.id}}" class="comment-reply" data-post-id="{{post.id}}"><i></i> reply</span>
+
+        {{!-- NO OF COMMENTS --}}
+        {{#if post.comments}}<div class="small-text">...{{post.comments.length}} comments</div>{{/if}}
+
+        {{!-- COMMENTS --}}
+        <div id="comments-{{post.id}}" class="comments-hidden">
+            <div class="comments">
+                {{#each post.comments as |comment|}}
+                <div class="comments-text">{{comment.comment}}
+                    <span id="comment-reply-{{comment.id}}" class="comment-reply" data-post-id="{{post.id}}" data-comment-id="{{comment.id}}"><i></i> reply</span></div>
+                
+                <div class="user-name">{{comment.user.username}} at {{formatDate comment.createdAt "dayLong"}}
+                </div>
+                {{/each}}
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="add-form-{{post.id}}"></div>
+
+{{#ifIn post.id ../userPosts}} <div class="btn edit-btn"><a href="/editpost/{{post.id}}">
         edit post
     </a></div> {{/ifIn}}
-    {{/each}}
-
-    {{!--
+{{/each}}
+<div id="loggedInUser" data-loggedInId="{{loggedInUser.id}}"></div>
+{{!--
 </div> --}}
+<script src="/js/makeComments.js"></script>
 <script src="/js/showComments.js"></script>

@@ -1,7 +1,10 @@
 const User = require('./User');
+const CommentsUser = require('./User');
+
 const Posts = require('./Posts');
+
 const Comments = require('./Comments');
-const CommentsUser = require('./User')
+const OtherComments =  require('./Comments');
 
 // Belongs to and has many linkage initialisations
 
@@ -27,4 +30,12 @@ CommentsUser.hasMany(Comments, {
     foreignKey: 'user_id',
 });
 
-module.exports = { User, Posts, Comments, CommentsUser };
+// OtherComments.belongsTo(CommentsUser, {
+//     foreignKey: 'comments_id',
+// });
+// Comments.hasMany(OtherComments, {
+//     foreignKey: 'comments_id',
+// });
+
+
+module.exports = { User, Posts, Comments, CommentsUser, OtherComments };

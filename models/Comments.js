@@ -32,10 +32,10 @@ Comments.init(
       comments_id: {
         type: DataTypes.INTEGER,
         allowNull: true,//might be a comment on a post
-        references: {
-          model: 'comments',
-          key: 'id',
-        },
+        // references: {
+        //   model: 'comments',
+        //   key: 'id',
+        // },
       },
       comment: {
         type: DataTypes.STRING,
