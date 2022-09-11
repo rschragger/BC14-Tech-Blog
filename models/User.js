@@ -21,10 +21,9 @@ User.init(
       autoIncrement: true,
     },
     username: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING(64),
       allowNull: false,
-      unique: true,
-      len:[3,64]
+      unique: true
     },
     email: {
       type: DataTypes.STRING,

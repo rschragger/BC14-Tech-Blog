@@ -27,6 +27,24 @@ const getLoggedInUser = async (loggedIn, userId) => {
 	return null;
 }
 
+
+const getPostsData = async () => {
+
+	// const searchOp = !userId ? '[Op.gt]': '[Op.eq]' ; //tried to make it all or by one
+	// const searchTerm = !userId ? 0: userId;
+
+	const postsData = await Posts.findAll({
+		include: [{ model: User }, { model: Comments, include: [{ model: CommentsUser }] }],
+		attributes: { exclude: ["password"] },
+		// where: { id: { searchOp : searchTerm } },
+	})
+		.catch(err => console.log(err));
+	const posts = postsData.map((obj) => obj.get({ plain: true }));
+	
+	return posts
+}
+
 module.exports = {
-	getLoggedInUser
+	getLoggedInUser,
+	getPostsData
 }

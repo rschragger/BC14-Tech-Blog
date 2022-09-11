@@ -1,13 +1,28 @@
-{{!-- <div class="sidebar"> --}}
-    {{!-- <p>Sidebar Test</p> --}}
-    <div>
-        <ul>Posts {{loggedInUser.username}}
-            {{!-- {{#each loggedInUser as |user|}}
-            <li><a href="/post/{{loggedInUser.post.id}}">{{incremented @index}}. {{user.username}}</a> </li>
-            {{/each}} --}}
+{{#if loggedInUser}}
+<ul class="post-card-sidebar">Posts by {{loggedInUser.username}}
+    {{#each loggedInUser.posts as |post|}}
+    <a href="/post/{{post.id}}">
+        <li class="posts-title">{{incremented @index}}. {{post.title}}</li>
+    </a>
+    {{/each}}
+</ul>
 
-            {{#each loggedInUser.posts as |post|}}
-            <li><a href="/post/{{post.id}}">{{incremented @index}}. {{post.title}}</a> </li>
-            {{/each}}
-        </ul>
-    </div>
+<div class="post-card-sidebar">
+    <a href="/newpost" >
+        <div class="btn">New Post</div>
+    </a>
+</div>
+
+
+{{else}}
+<div class="post-card-sidebar">
+    <a href="/login" class="btn">
+        <div>Login</div>
+    </a>
+</div>
+<div class="post-card-sidebar">
+    <a href="/signup" class="btn">
+        <div>Sign Up</div>
+    </a>
+</div>
+{{/if}}

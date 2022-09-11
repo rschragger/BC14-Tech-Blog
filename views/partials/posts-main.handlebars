@@ -1,20 +1,27 @@
-<div class="main-section">
-    <h1>POSTS TEST HERE</h1>
+{{!-- <div class="main-section"> --}}
+    {{!-- <h1>POSTS TEST HERE</h1> --}}
     {{#each posts as |post|}}
-    <div class="posts">
-        <div class="posts-title">{{incremented @index}}. {{post.title}}
-            <div class="user-name">{{post.user.username}} at {{formatDate post.createdAt "dayLong"}}</div>
-        </div>
-
-        <div class="posts-text">{{post.text}}{{post.id}}
-            <div class="comments">
-                {{#each post.comments as |comment|}}
-                <div class="comments-text">{{comment.comment}}</div>
-                <div class="user-name">{{comment.user.username}} at {{formatDate comment.createdAt "dayLong"}}</div>
-                {{/each}}
+    <div id="post-{{post.id}}" class="post-card">
+        {{!-- <a href="/post/{{post.id}}"> --}}
+            <div class="posts-title">{{incremented @index}}. {{post.title}}
+                <div class="user-name">{{post.user.username}} at {{formatDate post.createdAt "dayLong"}}</div>
             </div>
-        </div>
-        
+
+            <div class="posts-text">{{post.text}}
+                {{#if post.comments}}<div class="small-text">...{{post.comments.length}} comments</div>{{/if}}
+                <div id="comments-{{post.id}}" class="comments-hidden">
+                    <div class="comments">
+                        {{#each post.comments as |comment|}}
+                        <div class="comments-text">{{comment.comment}}</div>
+                        <div class="user-name">{{comment.user.username}} at {{formatDate comment.createdAt "dayLong"}}
+                        </div>
+                        {{/each}}
+                    </div>
+                </div>
+            </div>
+            {{!--
+        </a> --}}
     </div>
     {{/each}}
-    </div>
+{{!-- </div> --}}
+<script src="/js/showComments.js"></script>

@@ -6,6 +6,7 @@ router.get('/', async (req, res) => {
   try {
     const users = await User.findAll({
       include: [{ model: Posts, include: [{ model: Comments }] }],
+      attributes:{exclude: ["password"]},
     });
     res.status(200).json({
       data: users
@@ -23,7 +24,7 @@ router.get('/:id', async (req, res) => {
   try {
     const user = await User.findByPk(req.params.id, {
       include: [{ model: Posts }],
-
+      attributes:{exclude: ["password"]},
     });
 
     res.status(200).json({

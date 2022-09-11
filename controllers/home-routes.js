@@ -5,15 +5,19 @@ const modularUtils = require('../utils/ModularUtils');
 
 
 router.get('/', async (req, res) => {
-// Posts is the basic building block
+  // Posts is the basic building block
 
-  const postsData = await Posts.findAll({
-    include: [{ model: User }, { model: Comments, include: [{ model: CommentsUser }] }]
+  /* Made this modular - modularUtils.getPostsData()
+   const postsData = await Posts.findAll({
+    include: [{ model: User }, { model: Comments, include: [{ model: CommentsUser }] }],
+    attributes:{exclude: ["password"]},
   })
     .catch(err => console.log(err));
   const posts = postsData.map((obj) => obj.get({ plain: true }));
+*/
 
-  const loggedInUser = await modularUtils.getLoggedInUser(req.session.loggedIn,req.session.userId);
+  const loggedInUser = await modularUtils.getLoggedInUser(req.session.loggedIn, req.session.userId);
+  const posts = await modularUtils.getPostsData()
 
   console.log(loggedInUser)
 
@@ -43,7 +47,7 @@ router.get('/signup', async (req, res) => {
   // Display the signup page
   res.render('homepage',
     {
-     signupView: true
+      signupView: true
     });
 })
 

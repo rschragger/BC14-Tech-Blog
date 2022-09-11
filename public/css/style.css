@@ -21,6 +21,7 @@
 
   --stRadius: 0 6px 0 6px;
   --padding: 3px;
+  --margin: 3px;
 }
 
 
@@ -37,6 +38,14 @@
 
 }
 
+a,
+a:-webkit-any-link {
+  color: unset;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  text-decoration: none;
+}
+
 /* Tags ----------------- */
 html,
 body,
@@ -50,6 +59,7 @@ body,
 
 body {
   background-color: var(--light);
+  margin: var(--margin);
   /* display: flex;
   flex-wrap: wrap; */
 }
@@ -61,15 +71,17 @@ header {
   font-weight: 800;
   display: flex;
   flex-wrap: wrap;
-  width: 95%;
-  margin: auto;
+  width: 100%;
+  margin: var(--margin);
+  padding: var(--padding);
 }
 
 main {
   display: flex;
-  flex-wrap: wrap;
-  width: 95%;
-  margin: auto;
+  /* flex-wrap: wrap; */
+  width: 100%;
+  /* margin: var(--margin);
+  padding: var(--padding); */
   text-align: center;
 
 }
@@ -84,32 +96,45 @@ nav {
 
 .nav-item {
   font-size: 1.3rem;
-  padding: var(--padding)
+  padding: var(--padding);
+  border-left: 1px solid var(--highlight);
+
 }
 
 .main-section {
   display: flex;
   flex-wrap: wrap;
-  width: 95%;
-  margin: auto;
+  /* width: 95%; */
+  margin: var(--margin) auto;
   /* align-items: flex-start;
   justify-content: flex-start; */
   height: auto;
-  width: 75%;
-  flex-grow: inherit;
+  /* min-width: 55%; */
+  /* max-width: 100%; */
+
+  /* https://stackoverflow.com/questions/26275982/putting-moz-available-and-webkit-fill-available-in-one-width-css-property */
+  width: -moz-available;
+  /* WebKit-based browsers will ignore this. */
+  width: -webkit-fill-available;
+  /* Mozilla-based browsers will ignore this. */
+  width: fill-available;
 }
 
 .sidebar {
   display: flex;
-  flex-wrap: wrap;
-  margin: 3px auto;
+  /* flex-wrap: wrap; */
+  flex-direction: column;
+  margin: var(--margin) auto;
+  padding: var(--padding);
+
   align-items: flex-start;
   justify-content: flex-start;
   /* height:auto; */
   /* position: sticky;
   top: 25px; */
-  /* max-width: 25%; */
-  width: 200px;
+  max-width: 35%;
+  min-width: 200px;
+
 }
 
 
@@ -118,11 +143,13 @@ nav {
   background-color: var(--highlight);
   border-radius: var(--stRadius);
   padding: var(--padding);
-  margin: 3px;
+  margin: var(--margin);
 }
 
 /* --Validation------------------------------------ */
-
+.small-text {
+  font-size: .6rem;
+}
 
 .valid-feedback {
   display: block;
@@ -134,9 +161,11 @@ nav {
   display: none;
   color: red;
 }
+
 .disply-error {
   display: block;
 }
+
 /* -------------------------------------- */
 
 .posts-title,
@@ -147,10 +176,19 @@ nav {
   background-color: var(--highlight);
   /* border: 1pt solid var(--darker); */
   border-radius: var(--stRadius);
-  width: 95%;
-  margin: 3pt auto;
+  /* width: 95%; */
+  margin: var(--padding) auto;
   padding: var(--padding);
   text-align: left;
+}
+
+.post-card,
+.post-card-sidebar {
+  background-color: var(--highlight);
+  border-radius: var(--stRadius);
+  margin: var(--margin);
+  padding: var(--padding);
+  width: 100%;
 }
 
 .posts {
@@ -173,6 +211,14 @@ nav {
   padding: var(--padding);
 }
 
+.comments-hidden {
+  display: none;
+}
+
+.comments-show {
+  display: block;
+}
+
 .user-name {
   font-size: .8rem;
   font-style: italic;
@@ -187,9 +233,10 @@ nav {
 .btn {
   width: 95%;
   border-radius: var(--stRadius);
+  background-color: var(--accent);
   color: var(--highlight);
   box-shadow: inset -2px -2px 4px var(--darker);
-  margin: 3px;
+  margin: var(--margin);
   border: none;
 }
 
@@ -276,10 +323,24 @@ nav {
     font-size: 1rem;
   }
 
+  main {
+    flex-direction: column;
+  }
+
   .sidebar,
   .main-section {
-    width: 95%;
-    margin: auto;
+    width: 100%;
+    margin: var(--margin);
+    max-width: none;
+    /* padding: var(--padding); */
+  }
+
+  .nav-item {
+    justify-content: space-around;
+    border-bottom: 1px solid var(--highlight);
+    border-left: none;
+    min-width: 45%;
+    margin: var(--margin);
   }
 }
 
@@ -294,4 +355,9 @@ nav {
     width: 95%;
   }
 
+  .nav-item {
+    border-bottom: 1px solid var(--highlight);
+    border-left: none;
+    min-width: 100%;
+  }
 }
