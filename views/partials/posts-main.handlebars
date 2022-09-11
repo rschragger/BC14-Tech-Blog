@@ -11,7 +11,7 @@
         {{#if post.comments}}<div class="small-text">...{{post.comments.length}} comments</div>{{/if}}
 
         {{!-- COMMENTS --}}
-        <div id="comments-{{post.id}}" class="comments-hidden">
+        <div id="comments-{{post.id}}" class="comments-{{#if ../posts.[1]}}hidden{{else}}show{{/if}}">
             <div class="comments">
                 {{#each post.comments as |comment|}}
                 <div class="comments-text">{{comment.comment}}

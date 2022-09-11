@@ -60,18 +60,12 @@ const newCommentFormHandler = async (event) => {
 		const response = await fetch('/api/comments', {
 			method: 'POST',
 			body: JSON.stringify({
-				/*
-				user_id,
-				posts_id,
-				comments_id,
-				comment
-*/
-				
-				"user_id":user_id,
-				"posts_id":posts_id,
-				"comments_id":comments_id,
-				"comment":comment
-				
+
+				"user_id": user_id,
+				"posts_id": posts_id,
+				"comments_id": comments_id,
+				"comment": comment
+
 			}),
 			headers: {
 				'content-type': 'application/json'
@@ -84,6 +78,10 @@ const newCommentFormHandler = async (event) => {
 		// If ok, Redirect to the home page
 		if (response.ok) {
 			window.location = `/post/${posts_id}`;
+			// let commentDiv = document.getElementById(`comments-${comment_id}`)
+
+			// commentDiv.className = commentDiv.className.replace("comments-hidden", "comments-show")
+
 		}
 	}
 	else {
