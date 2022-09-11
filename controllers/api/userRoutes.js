@@ -79,7 +79,7 @@ router.post('/login', async (req, res) => {
 
     if (!userData) {
       // No user with that username address was found
-      res.status(400).json({
+      res.status(401).json({
         message: "The user doesn't exist!"
       });
 
@@ -91,7 +91,7 @@ router.post('/login', async (req, res) => {
 
     if (!isValidPassword) {
       // The password is incorrect
-      res.status(400).json({
+      res.status(402).json({
         message: "The username or password is incorrect!"
       });
 

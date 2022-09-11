@@ -20,6 +20,7 @@
   --fCastBg: linear-gradient(180deg, var(--fCastColLt) 40%, var(--fCastColDk) 90%);
 
   --stRadius: 0 6px 0 6px;
+  --padding: 3px;
 }
 
 
@@ -33,6 +34,7 @@
   text-align: center;
   line-height: 1.3;
   /* font-size: 14px; */
+
 }
 
 /* Tags ----------------- */
@@ -48,6 +50,8 @@ body,
 
 body {
   background-color: var(--light);
+  /* display: flex;
+  flex-wrap: wrap; */
 }
 
 header {
@@ -55,27 +59,84 @@ header {
   color: var(--highlight);
   font-size: 2rem;
   font-weight: 800;
-}
-
-main,
-.sidebar,
-.main-section {
   display: flex;
   flex-wrap: wrap;
-  width:95%;
+  width: 95%;
   margin: auto;
 }
 
-.sidebar {
-  width: 30%;
-  /* min-width: 300px; */
+main {
+  display: flex;
+  flex-wrap: wrap;
+  width: 95%;
+  margin: auto;
+  text-align: center;
+
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  width: 100%;
+  padding: var(--padding)
+}
+
+.nav-item {
+  font-size: 1.3rem;
+  padding: var(--padding)
 }
 
 .main-section {
-  width:65%;
+  display: flex;
+  flex-wrap: wrap;
+  width: 95%;
+  margin: auto;
+  /* align-items: flex-start;
+  justify-content: flex-start; */
+  height: auto;
+  width: 75%;
+  flex-grow: inherit;
+}
+
+.sidebar {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 3px auto;
+  align-items: flex-start;
+  justify-content: flex-start;
+  /* height:auto; */
+  /* position: sticky;
+  top: 25px; */
+  /* max-width: 25%; */
+  width: 200px;
 }
 
 
+
+.card-body {
+  background-color: var(--highlight);
+  border-radius: var(--stRadius);
+  padding: var(--padding);
+  margin: 3px;
+}
+
+/* --Validation------------------------------------ */
+
+
+.valid-feedback {
+  display: block;
+}
+
+
+
+.text-danger {
+  display: none;
+  color: red;
+}
+.disply-error {
+  display: block;
+}
 /* -------------------------------------- */
 
 .posts-title,
@@ -85,27 +146,31 @@ main,
 .comments-text {
   background-color: var(--highlight);
   /* border: 1pt solid var(--darker); */
-  border-radius: 3pt;
+  border-radius: var(--stRadius);
   width: 95%;
   margin: 3pt auto;
-  padding: 2pt;
+  padding: var(--padding);
   text-align: left;
 }
-.posts{
-  width:100%;
+
+.posts {
+  width: 100%;
   border: none;
+  padding: var(--padding);
 }
+
 .posts-title {
   background-color: var(--accent);
   color: var(--highlight);
   font-weight: 700;
+  padding: var(--padding);
 }
 
 .comments {
   margin-left: 5%;
   width: 95%;
   border: none;
-
+  padding: var(--padding);
 }
 
 .user-name {
@@ -113,7 +178,7 @@ main,
   font-style: italic;
   text-align: right;
   padding-right: 5pt;
-  border-top: 1pt solid var(--light) ;
+  border-top: 1pt solid var(--light);
 }
 
 
@@ -210,10 +275,11 @@ main,
   .btn {
     font-size: 1rem;
   }
+
   .sidebar,
   .main-section {
-    width:95%;
-    margin:auto;
+    width: 95%;
+    margin: auto;
   }
 }
 

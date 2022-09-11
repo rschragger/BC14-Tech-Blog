@@ -32,7 +32,7 @@ const ifIn = (elem, array, options) => {
     if (array.indexOf(elem) > -1) {
         return options.fn(this);
     }
-    return options.inverse(this);
+    return //options.inverse(this);
 };
 
 
@@ -48,14 +48,15 @@ const ifIn = (elem, array, options) => {
 //     return commentsFromPosts = commentsData.map((obj) => obj.get({ plain: true }));
 // }
 
-const commentsFromPosts =  (postId)=>{
-    return [{ comment:`Test - ${postId}`}]
-    // return { comment:`Test - ${postId}`}
-}
+// const commentsFromPosts =  (postId)=>{
+//     return [{ comment:`Test - ${postId}`}]
+//     // return { comment:`Test - ${postId}`}
+// }
 
 
 module.exports = {
     incremented,
-    commentsFromPosts,
-    formatDate
+    formatDate,
+    ifIn
 }
+    // commentsFromPosts,

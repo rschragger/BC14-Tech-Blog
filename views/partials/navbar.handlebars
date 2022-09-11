@@ -1,0 +1,15 @@
+{{!-- <h3>Navbar Test</h3> --}}
+
+    {{!-- <p>loggedIn {{loggedInUser.loggedIn}} - {{loggedInUser.first_name}}</p> --}}
+    {{#if loggedInUser.loggedIn}}
+    <div class="nav-item" >
+        Welcome {{loggedInUser.first_name}} {{loggedInUser.last_name}}
+    </div>
+    <div class="nav-item">
+        <a class="nav-link" href="#" id="btn-logout"><i class="btn"></i> Log out</a>
+    </div>
+    {{else}}
+    <div class="nav-item">
+        <a class="nav-link" href="/login"><i class="btn"></i> Login</a>
+    </div>
+    {{/if}}

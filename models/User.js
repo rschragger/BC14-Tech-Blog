@@ -24,6 +24,7 @@ User.init(
       type: DataTypes.STRING,
       allowNull: false,
       unique: true,
+      len:[3,64]
     },
     email: {
       type: DataTypes.STRING,
@@ -76,9 +77,9 @@ User.init(
     freezeTableName: true,
     underscored: true,
     modelName: 'user',
-    defaultScope: {
-      attributes: { exclude: ['password'] },
-    }//This should disallow password from  Sequelize API queries 
+    // defaultScope: {
+    //   attributes: { exclude: ['password'] },
+    // }//This should disallow password from  Sequelize API queries 
   }
 );
 

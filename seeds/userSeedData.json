@@ -1,71 +1,90 @@
-[{
-  "username": "jivy0",
-  "email": "jivy0@edublogs.org",
-  "password": "d3jY2OeH36",
-  "first_name": "Josy",
-  "last_name": "Ivy",
-  "mobile": "174-734-5883"
-}, {
-  "username": "eleving1",
-  "email": "eleving1@princeton.edu",
-  "password": "wj6CbUbu3PX",
-  "first_name": "Eustace",
-  "last_name": "Leving",
-  "mobile": "224-185-6525"
-}, {
-  "username": "ekahn2",
-  "email": "ekahn2@1und1.de",
-  "password": "X6j1rV",
-  "first_name": "Emelda",
-  "last_name": "Kahn",
-  "mobile": "549-785-7605"
-}, {
-  "username": "cwem3",
-  "email": "cwem3@wired.com",
-  "password": "8iy9S8",
-  "first_name": "Corinna",
-  "last_name": "Wem",
-  "mobile": "608-999-1584"
-}, {
-  "username": "bmidford4",
-  "email": "bmidford4@tripadvisor.com",
-  "password": "QG8qPmM",
-  "first_name": "Bret",
-  "last_name": "Midford",
-  "mobile": "342-756-2421"
-}, {
-  "username": "wgerrelts5",
-  "email": "wgerrelts5@cdc.gov",
-  "password": "tyutVYEr",
-  "first_name": "Willie",
-  "last_name": "Gerrelts",
-  "mobile": "793-125-4467"
-}, {
-  "username": "efarmiloe6",
-  "email": "efarmiloe6@networkadvertising.org",
-  "password": "x7iJ3LNkzLv",
-  "first_name": "Ermengarde",
-  "last_name": "Farmiloe",
-  "mobile": "108-466-1910"
-}, {
-  "username": "okennaway7",
-  "email": "okennaway7@soundcloud.com",
-  "password": "FImciRAaYN",
-  "first_name": "Obed",
-  "last_name": "Kennaway",
-  "mobile": "564-381-3930"
-}, {
-  "username": "wpeller8",
-  "email": "wpeller8@samsung.com",
-  "password": "tKKjixB9x",
-  "first_name": "Wilmette",
-  "last_name": "Peller",
-  "mobile": "138-132-9529"
-}, {
-  "username": "lzylbermann9",
-  "email": "lzylbermann9@homestead.com",
-  "password": "Ji09yn",
-  "first_name": "Lilli",
-  "last_name": "Zylbermann",
-  "mobile": "113-268-3926"
-}]
+[
+  {
+    "username": "user01",
+    "email": "jivy0@edublogs.org",
+    "password": "password1",
+    "first_name": "Test",
+    "last_name": "User1",
+    "mobile": "0423000000"
+  },
+  {
+    "username": "jivy0",
+    "email": "jivy0@edublogs.org",
+    "password": "d3jY2OeH36",
+    "first_name": "Josy",
+    "last_name": "Ivy",
+    "mobile": "174-734-5883"
+  },
+  {
+    "username": "eleving1",
+    "email": "eleving1@princeton.edu",
+    "password": "wj6CbUbu3PX",
+    "first_name": "Eustace",
+    "last_name": "Leving",
+    "mobile": "224-185-6525"
+  },
+  {
+    "username": "ekahn2",
+    "email": "ekahn2@1und1.de",
+    "password": "X6j1rV",
+    "first_name": "Emelda",
+    "last_name": "Kahn",
+    "mobile": "549-785-7605"
+  },
+  {
+    "username": "cwem3",
+    "email": "cwem3@wired.com",
+    "password": "8iy9S8",
+    "first_name": "Corinna",
+    "last_name": "Wem",
+    "mobile": "608-999-1584"
+  },
+  {
+    "username": "bmidford4",
+    "email": "bmidford4@tripadvisor.com",
+    "password": "QG8qPmM",
+    "first_name": "Bret",
+    "last_name": "Midford",
+    "mobile": "342-756-2421"
+  },
+  {
+    "username": "wgerrelts5",
+    "email": "wgerrelts5@cdc.gov",
+    "password": "tyutVYEr",
+    "first_name": "Willie",
+    "last_name": "Gerrelts",
+    "mobile": "793-125-4467"
+  },
+  {
+    "username": "efarmiloe6",
+    "email": "efarmiloe6@networkadvertising.org",
+    "password": "x7iJ3LNkzLv",
+    "first_name": "Ermengarde",
+    "last_name": "Farmiloe",
+    "mobile": "108-466-1910"
+  },
+  {
+    "username": "okennaway7",
+    "email": "okennaway7@soundcloud.com",
+    "password": "FImciRAaYN",
+    "first_name": "Obed",
+    "last_name": "Kennaway",
+    "mobile": "564-381-3930"
+  },
+  {
+    "username": "wpeller8",
+    "email": "wpeller8@samsung.com",
+    "password": "tKKjixB9x",
+    "first_name": "Wilmette",
+    "last_name": "Peller",
+    "mobile": "138-132-9529"
+  },
+  {
+    "username": "lzylbermann9",
+    "email": "lzylbermann9@homestead.com",
+    "password": "Ji09yn",
+    "first_name": "Lilli",
+    "last_name": "Zylbermann",
+    "mobile": "113-268-3926"
+  }
+]

@@ -1,0 +1,13 @@
+{{!-- <div class="sidebar"> --}}
+    {{!-- <p>Sidebar Test</p> --}}
+    <div>
+        <ul>Posts {{loggedInUser.username}}
+            {{!-- {{#each loggedInUser as |user|}}
+            <li><a href="/post/{{loggedInUser.post.id}}">{{incremented @index}}. {{user.username}}</a> </li>
+            {{/each}} --}}
+
+            {{#each loggedInUser.posts as |post|}}
+            <li><a href="/post/{{post.id}}">{{incremented @index}}. {{post.title}}</a> </li>
+            {{/each}}
+        </ul>
+    </div>
