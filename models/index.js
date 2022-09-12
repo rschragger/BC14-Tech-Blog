@@ -18,13 +18,16 @@ User.hasMany(Posts, {
 
 Comments.belongsTo(Posts, {
     foreignKey: 'posts_id',
+    onDelete: 'cascade',
 });
 Posts.hasMany(Comments, {
     foreignKey: 'posts_id',
+     onDelete: 'cascade', 
 });
 
 Comments.belongsTo(CommentsUser, {
     foreignKey: 'user_id',
+    onDelete: 'no action'
 });
 CommentsUser.hasMany(Comments, {
     foreignKey: 'user_id',
