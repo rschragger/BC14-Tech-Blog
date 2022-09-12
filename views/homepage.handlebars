@@ -1,7 +1,8 @@
 <header>
     <a href="/">
-        {{!-- <h1>  Tech Talky Talk  </h1> --}}
-        <img class="logo-img" src="/images/TechTalkyTalk.png" alt="Tech Talky Talk Logo" srcset="/images/TechTalkyTalk.png 200px">
+        {{!-- <h1> Tech Talky Talk </h1> --}}
+        <img class="logo-img" src="/images/TechTalkyTalk.png" alt="Tech Talky Talk Logo"
+            srcset="/images/TechTalkyTalk.png 200px">
     </a>
     <nav class="navbar">
         {{> navbar loggedInUser=loggedInUser}}
@@ -27,14 +28,14 @@
         {{/if}}
 
         {{#if newPostsView }}
-        {{> new-post posts=posts  loggedInUser=loggedInUser}}
+        {{> new-post posts=posts loggedInUser=loggedInUser}}
         {{/if}}
 
-         {{#if editPostsView }}
-        {{> edit-post posts=posts  loggedInUser=loggedInUser}}
+        {{#if editPostsView }}
+        {{> edit-post posts=posts loggedInUser=loggedInUser}}
         {{/if}}
     </div>
 </main>
 <footer>
-<div class="small-text">© 2022 Reeve Schragger</div>
+    <div class="small-text" style="text-align:right;">© 2022 Reeve Schragger</div>
 </footer>

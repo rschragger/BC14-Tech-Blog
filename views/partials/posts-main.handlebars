@@ -5,7 +5,12 @@
         <div class="user-name">{{post.user.username}} at {{formatDate post.createdAt "dayLong"}}</div>
     </div>
 
-    <div class="posts-text">{{post.text}}<span id="post-reply-{{post.id}}" class="comment-reply" data-post-id="{{post.id}}"><i></i> reply</span>
+    <div class="posts-text">{{post.text}}
+
+        {{!-- reply to post --}}
+        {{#if ../loggedInUser.id}}
+        <span id="post-reply-{{post.id}}" class="comment-reply" data-post-id="{{post.id}}"><i></i> reply</span>
+        {{/if}}
 
         {{!-- NO OF COMMENTS --}}
         {{#if post.comments}}<div class="small-text">...{{post.comments.length}} comments</div>{{/if}}
@@ -15,10 +20,18 @@
             <div class="comments">
                 {{#each post.comments as |comment|}}
                 <div class="comments-text">{{comment.comment}}
-                    <span id="comment-reply-{{comment.id}}" class="comment-reply" data-post-id="{{post.id}}" data-comment-id="{{comment.id}}"><i></i> reply</span></div>
-                
+                    
+                    {{!-- reply to comment --}}
+                    {{#if ../../loggedInUser.id}}
+                    <span id="comment-reply-{{comment.id}}" class="comment-reply" data-post-id="{{post.id}}"
+                        data-comment-id="{{comment.id}}"><i></i> reply</span>
+                    {{/if}}
+
+                </div>
                 <div class="user-name">{{comment.user.username}} at {{formatDate comment.createdAt "dayLong"}}
                 </div>
+
+
                 {{/each}}
             </div>
         </div>
