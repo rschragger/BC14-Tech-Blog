@@ -1,5 +1,7 @@
 const router = require('express').Router();
 const { User, Posts, Comments, CommentsUser } = require('../models');
+const { Op } = require("sequelize");
+
 const { withAuth } = require('../utils/auth');
 const modularUtils = require('../utils/ModularUtils');
 
@@ -36,6 +38,50 @@ router.get('/', async (req, res) => {
     })
 
 });
+
+router.get('/search/:searchTerm', async (req, res) => {
+  const loggedInUser = await modularUtils.getLoggedInUser(req.session.loggedIn, req.session.userId);
+
+
+  // Get all the search results
+  // const searchResults = await modelUtility.searchAll(req.params.searchTerm, req.query);
+
+  const postsData = await Posts.findAll({
+    include: [{ model: User }, { model: Comments, include: [{ model: CommentsUser }] }],
+    where: {
+      [Op.or]:[
+			{title: {[Op.substring]: req.params.searchTerm}},
+      {text: {[Op.substring]: req.params.searchTerm}},
+      {'$comments.comment$': {[Op.substring]: req.params.searchTerm}},
+      // {'$user.first_name$': {[Op.substring]: req.params.searchTerm}},
+      // {'$user.last_name$': {[Op.substring]: req.params.searchTerm}},
+       {'$user.username$': {[Op.substring]: req.params.searchTerm}},
+    ],
+		},
+    order:[['createdAt','DESC']]
+  })
+    .catch(err => console.log(err));
+  const posts = postsData.map((obj) => obj.get({ plain: true }));
+
+  const userPosts = posts.map((obj)=>{
+    if(obj.user_id===loggedInUser.id){ return obj.id }
+  })
+  
+	res.render('homepage', {
+    // loggedInUser,
+    // loggedIn: req.session.loggedIn,
+    // searchResults,
+    // isSearching: true,
+
+    // searchedTerm: req.params.searchTerm
+
+    posts,
+      userPosts,
+      loggedInUser,
+      postsView: true
+	});
+});
+
 
 router.get('/login', async (req, res) => {
   // Display the login page

@@ -1,4 +1,6 @@
+
 {{#if loggedInUser}}
+{{> search posts=posts}}
 <ul class="post-card-sidebar">Posts by {{loggedInUser.username}}
     {{#each loggedInUser.posts as |post|}}
     <a href="/post/{{post.id}}">
