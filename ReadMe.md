@@ -18,9 +18,7 @@ Heroku deployment: https://tech-talky-talk.herokuapp.com/
   - [License](#license)
   - [Features](#features)
       - [Contributions](#contributions)
-  - [Tests](#tests)
-  - [Questions](#questions)
-      - [Contacts](#contacts)
+  - [Contacts](#contacts)
   
   ## Installation
    
@@ -42,17 +40,15 @@ Heroku deployment: https://tech-talky-talk.herokuapp.com/
 </p>
   
   ## Credits
-   
-  
-
+ I just want to acknowledge @seangenge as we worked together on the previous project and he showed me the modularised model for utilities which I used  and added my own flavour and modules
+ 
   Languages
 - HTML
 - CSS
 - JavaScript
 - MySQL
-- 
 - Node
-- 
+- Mockaroo.com
 </p>
 </p>
   
@@ -70,6 +66,10 @@ Heroku deployment: https://tech-talky-talk.herokuapp.com/
 </p>
   
   Tutorials
+  - Stack overflow
+  - sequelize.com
+  - W3 Schools
+  - MDN
 
 </p>
   
@@ -80,21 +80,23 @@ Heroku deployment: https://tech-talky-talk.herokuapp.com/
   CC0
   
   ## Features
+  - Allows to comment on comments
+  - Unauthorised users are kept out of being able to edit others' work
+  
+  ### Future directions
+  - Improve the commenting features
+  - Allow for uploading of media into posts
+  - Add likes infrastructure
+  - Add user prefs
    
 </p>
   
   ### Contributions
    
   Contribution guidelines: Student Project, no plans to push forward
-  
-  ## Tests
-  
-  
-  
-  ## Questions
    
   
-  ### Contacts
+  ## Contacts
    
   You can reach me for additional questions at:
   - Email: [reeveschragger@gmail.com](mailto:reeveschragger@gmail.com)
