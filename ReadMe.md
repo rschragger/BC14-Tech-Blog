@@ -28,8 +28,8 @@ Heroku deployment: https://tech-talky-talk.herokuapp.com/
 -  Run `npm run seeds` if you need to seed the application with dummy data
 -  To access our online deployment go to https://tech-talky-talk.herokuapp.com/
 </p>
-  
-  ## Usage
+
+## Usage
    
   Usage Instructions:
 - Application complies with standard usage norms
@@ -39,11 +39,13 @@ Heroku deployment: https://tech-talky-talk.herokuapp.com/
 -  comment on yours and other's posts
 - Simple search will return substrings within posts, usernames, comments
 </p>
+
 #### Screenshots
 
-![Dashboard](public/images/Screen%20Shot%20-TechTalkyTalk-Dashboard.png%0D) 
+![Dashboard](public/images/ScreenShot-TechTalkyTalk-Dashboard.png) 
 
-![Homepage on iPhone](public/images/Screen%20Shot%20-TechTalkyTalk-iPhoneHomepage.png%0D) [](ReadMe.md) 
+![Homepage on iPhone](public/images/ScreenShot-TechTalkyTalk-iPhoneHomepage.png)
+
   
   ## Credits
  I just want to acknowledge @seangenge as we worked together on the previous project and he showed me the modularised model for utilities which I used and added my own flavour and modules
