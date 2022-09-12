@@ -37,12 +37,18 @@ Heroku deployment: https://tech-talky-talk.herokuapp.com/
 -  'Dasboard' will show you your own posts
 -  You can add posts/edit and delete (your own) posts
 -  comment on yours and other's posts
+- Simple search will return substrings within posts, usernames, comments
 </p>
+#### Screenshots
+
+![Dashboard](public/images/Screen%20Shot%20-TechTalkyTalk-Dashboard.png%0D) 
+
+![Homepage on iPhone](public/images/Screen%20Shot%20-TechTalkyTalk-iPhoneHomepage.png%0D) [](ReadMe.md) 
   
   ## Credits
- I just want to acknowledge @seangenge as we worked together on the previous project and he showed me the modularised model for utilities which I used  and added my own flavour and modules
+ I just want to acknowledge @seangenge as we worked together on the previous project and he showed me the modularised model for utilities which I used and added my own flavour and modules
  
-  Languages
+ #### Languages
 - HTML
 - CSS
 - JavaScript
@@ -52,7 +58,7 @@ Heroku deployment: https://tech-talky-talk.herokuapp.com/
 </p>
 </p>
   
-  Third Party Assets
+####  Third Party Assets
 - bcrypt- ^5.0.0,
 - connect-session-sequelize- ^7.1.4,
 - dotenv- ^8.2.0,
@@ -65,7 +71,7 @@ Heroku deployment: https://tech-talky-talk.herokuapp.com/
 - validator- ^13.7.0
 </p>
   
-  Tutorials
+ #### Tutorials
   - Stack overflow
   - sequelize.com
   - W3 Schools
@@ -82,12 +88,14 @@ Heroku deployment: https://tech-talky-talk.herokuapp.com/
   ## Features
   - Allows to comment on comments
   - Unauthorised users are kept out of being able to edit others' work
+  - Search function for parts of words
   
   ### Future directions
   - Improve the commenting features
   - Allow for uploading of media into posts
   - Add likes infrastructure
   - Add user prefs
+  - improve search
    
 </p>
   
