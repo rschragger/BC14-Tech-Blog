@@ -25,7 +25,7 @@ router.get('/:id',withAuth, async (req, res) => {
     {
       loggedInUser,
       posts,
-      userPosts,
+      userPosts, 
       postsView: true
     })
 

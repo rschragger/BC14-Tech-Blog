@@ -82,6 +82,12 @@ header {
   padding: var(--padding);
 }
 
+.logo-img{
+max-width: 250px;
+padding: var(--padding);
+margin: var(--margin);
+}
+
 main {
   display: flex;
   /* flex-wrap: wrap; */
@@ -190,6 +196,7 @@ nav {
   font-size: .8rem;
   float: right;
   font-style: italic;
+  color: var(--dark);
 }
 
 .small-text {
