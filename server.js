@@ -42,7 +42,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(routes);
-sequelize.sync({ force: true }).then(() => { //production version
+sequelize.sync({ force: false }).then(() => { //production version force: false
 // sequelize.sync({ alter: true }).then(() => { //development version
   app.listen(PORT, () => console.log('Now listening on http://localhost:3001'));
 });
